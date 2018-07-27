@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    // product name: must be the name of a product definition directory in product
+    ext.product = "arsdk"
+    // workspace root directory
+    ext.root_dir = gradle.ext.root_dir
+    // put all build files into workspace out
+    if (project.hasProperty('alchemyOutRoot')) {
+        buildDir = "${alchemyOutRoot}/${ext.product}-android/gradle/${project.name}"
+    } else {
+        buildDir = "${ext.root_dir}/out/${ext.product}-android/gradle/${project.name}"
+    }
+}
+
+ext {
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.2'
+    androidSupportV4Version = 'com.android.support:support-v4:24.0.+'
+    jmdnsVersion = 'javax.jmdns:jmdns:3.4.1'
+    sanselanVersion = 'org.apache.sanselan:sanselan:0.97-incubator'
+    androidSupportAppcompatVersion = 'com.android.support:appcompat-v7:24.2.0'
+    minSdkVersion = 15
+    targetSdkVersion = 24
+    buildWithLocalSDK = false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
