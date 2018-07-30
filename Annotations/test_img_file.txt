@@ -1,0 +1,7 @@
+0	testImages/drone1_frame_29.jpg	0
+1	testImages/drone1_frame_30.jpg	0
+2	testImages/drone1_frame_38.jpg	0
+3	testImages/drone1_frame_45.jpg	0
+4	testImages/drone1_frame_49.jpg	0
+5	testImages/drone1_frame_51.jpg	0
+6	testImages/drone1_frame_66.jpg	0
